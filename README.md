@@ -3,8 +3,7 @@ Chrome (headless) cookie snatcher
 
 For use in Red Team ops where you have a shell on a user's machine and want to (silently) dump their cookies, without needing to compromise their keychain on OSX (and risk alerting the user/setting off alarm bells).  (Ab)uses Chrome Debugger Protocol in headless mode to load up a site (and/or potentially their most recent browsing session so you can see what they were looking at, etc, although can be modified as needed), start crumb-snatchin', and obtain all of the l3wtz.  
 
-(Also, additional caveat:  Chrome Debugger Protocol is verrry cantankerous, so it may not cooperate immediately, but luckily it's not noisy to start and stop it.  If the user already has Chrome open, you can skip the 
- --headless part, and it generally is more cooperative.)
+***Also, additional caveat:  Chrome Debugger Protocol is verrry cantankerous, so it may not cooperate immediately, but luckily it's not noisy to start and stop it.  If the user already has Chrome open, it's important to SKIP the --headless arg, and not only is it generally is more cooperative, but if it's in headless mode and the user tries to OPEN Chrome, it will bug out and not open, which will likely lead them to restart their machine, log out, etc, which may cost you an active session.  Caveat emptor.
 
 No additional privilege needed to run it beyond what the user has.
 
