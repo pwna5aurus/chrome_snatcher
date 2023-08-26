@@ -1,8 +1,20 @@
 #Standard Chrome debugger protocol endpoint: http://localhost:9222/(json/version)
 #chrome --headless=new --remote-debugging-port=9222 --remote-allow-origins="*" --no-sandbox --disable-gpu --profile-directory="Profile <x>" (In my case it wasn't 0 or 1, might have to do some additional trial/error here)
 
-# Chrome Snatcher implemented using headless Chrome Debugging Protocol, loads up [local] user's profile, grabs cookies, and prints to console
-# Good for Red Teaming and avoiding detection
+# Chrome Snatcher uses headless Chrome Debugging Protocol, and after you load up the [local] user's profile (via the string above), 
+# it grabs cookies, and prints to console (or outputs to file because of size, adjust as needed)
+# all using native Python (instead of websockets, pychrome, etc)
+# 
+# The reason I built it is because I couldn't find a tool for stealthy, 1-shot cookie stealing for Chrome.
+#
+# Most of them rely on 
+# 1) outdated methodologies
+# 2) snagging the sqlite db + keychain (which would involve tricking the user) or win32crypt and decrypting offline
+# 3) external dependencies 
+#
+# I wanted something portable that I could be cURL'd from Github, reside completely in memory, get the cookies, and get out, without dropping to disk (I added the output to disk as a stopgap below;
+# it will need to be updated to fit specific use cases).  Great for Red Teaming.
+#
 # Copyright (c) 2023 Ben Floyd.
 #
 # BSD-3 Clause (New BSD License)
