@@ -1,7 +1,7 @@
 #Standard Chrome debugger protocol endpoint: http://localhost:9222/(json/version)
 #chrome --headless=new --remote-debugging-port=9222 --remote-allow-origins="*" --no-sandbox --disable-gpu --profile-directory="Profile <x>" (In my case it wasn't 0 or 1, might have to do some additional trial/error here)
 
-# Chrome Snatcher uses headless Chrome Debugging Protocol, and after you load up the [local] user's profile (via the string above), 
+# Chrome Snatcher uses headless Chrome Debugging Protocol, and after you load up the [local] user's profile (via the chrome + args above), 
 # it grabs cookies, and prints to console (or outputs to file because of size, adjust as needed)
 # all using native Python (instead of websockets, pychrome, etc)
 # 
