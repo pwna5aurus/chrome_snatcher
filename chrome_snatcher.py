@@ -11,6 +11,7 @@
 # 1) outdated methodologies
 # 2) snagging the sqlite db + keychain (which would involve tricking the user) or win32crypt and decrypting offline
 # 3) external dependencies 
+# 4) additional user interaction (a la keychain prompt)
 #
 # I wanted something portable that I could be cURL'd from Github, reside completely in memory, get the cookies, and get out, without dropping to disk (I added the output to disk as a stopgap below;
 # it will need to be updated to fit specific use cases).  Great for Red Teaming.
